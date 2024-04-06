@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, Query, Path
 from bson import ObjectId
-from db import collection as students_collection
+from db import students_collection
 
 app = FastAPI()
 

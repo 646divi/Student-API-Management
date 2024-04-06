@@ -5,7 +5,7 @@ from pymongo import MongoClient
 collection_name="students"
 try:
 
-    cli = MongoClient(DATABASE_URL)
+    cli = MongoClient('mongodb+srv://devesh646:Password646@socialdb.gyv60n5.mongodb.net/')
     db = cli['studentdb']  # If there is Database it will get selected or else this step will create database
 
     #If collection already exists else create the collection based on below schema
@@ -19,11 +19,12 @@ try:
             f"Collection was not created due to some error: {err}"
     else:
         print("yeahhh")
-    collection=db["students"]
 
+    
 except Exception as err:
     f"Database not connected due to: {err}"
 
+students_collection=db[collection_name]
 print("Database is created and collection is also made")
 
 #Demo Schema
