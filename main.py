@@ -38,7 +38,7 @@ async def list_students(country: str = Query(None, description="Filter by countr
 
 @app.get("/students/{id}", response_model=dict)
 async def get_student(id: str = Path(..., description="The ID of the student previously created")):
-    
+
     # Fetch the student from the database by ID
     student = students_collection.find_one({"_id": ObjectId(id)}, {'_id': 0})
     
@@ -76,5 +76,5 @@ async def delete_student(id: str = Path(..., description="The ID of the student 
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="localhost", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
