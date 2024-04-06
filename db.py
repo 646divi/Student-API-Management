@@ -5,7 +5,7 @@ from pymongo import MongoClient
 collection_name="students"
 try:
 
-    cli = MongoClient('mongodb+srv://devesh646:Password646@socialdb.gyv60n5.mongodb.net/')
+    cli = MongoClient(DATABASE_URL)
     db = cli['studentdb']  # If there is Database it will get selected or else this step will create database
 
     #If collection already exists else create the collection based on below schema
